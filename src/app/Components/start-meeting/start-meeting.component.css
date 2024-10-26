@@ -1,0 +1,67 @@
+.overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(84, 79, 127, 0.5);  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+.plan:hover .overlay{
+  height: 100%;
+  opacity: 1;
+  visibility: visible;  
+}
+
+.accordion-button::after {
+  background-image: none;
+}
+.accordion-button::before {
+  content: "-";
+  background-color: #9490ae;
+  color: #ffffff;
+  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 10px;
+}
+.accordion-button.collapsed::before {
+  content: "+";
+}
+.people ul {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.people ul::-webkit-scrollbar {
+  width: 6px;
+}
+.people ul::-webkit-scrollbar-track {
+  background: #b9bdc840;
+  border-radius: 8px;
+}
+.people ul::-webkit-scrollbar-thumb {
+  background: #ffffffbd;
+  border-radius: 8px;
+}
+.setting{
+  padding: 2px;
+}
+@media screen and (max-width: 575px){
+  .overlay{
+    flex-direction: column;
+  }
+  .overlay button{
+    width: 100%;
+  }
+}

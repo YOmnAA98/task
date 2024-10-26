@@ -1,0 +1,259 @@
+<section class="start-meeting main-bg my-3">
+  <div class="container-fluid">
+    <div class="content d-flex flex-column gap-2">
+      <app-navbar></app-navbar>
+      <app-meeting-title></app-meeting-title>
+      <div class="row g-2">
+        <div [class]="isHide ? 'col-lg-9' : 'col-lg-12'" class="order-0">
+          <div class="plan bg-white p-3 rounded-3 position-relative">
+            <div class="d-sm-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center gap-2">
+                <span class="dark-blue-badge py-1 px-2 rounded-3 font-size-20 font-bold">01</span>
+                <h2 class="blue-heading-color font-size-14 font-bold">أداء تنفيذ خطة العمل للربع الثاني للعام</h2>
+              </div>
+              <div class="d-flex align-items-center gap-1 mt-2 mt-md-0 dark-gray-color">
+                <i class="bi bi-clock"></i>
+                <p class="font-size-14 font-bold">08:40 - 08:30</p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-between my-2">
+              <div class="col-lg-4 d-flex align-items-center gap-1 dark-gray-color">
+                <i class="bi bi-mic"></i>
+                <p class="font-size-14">أمين سر المجلس</p>
+              </div>
+              <div class="col-lg-8 row g-2">
+                <div class="col-sm-6">
+                  <app-main-show></app-main-show>
+                </div>
+                <div class="col-sm-6">
+                  <app-temp-show></app-temp-show>
+                </div>
+              </div>
+            </div>
+            <div class="sign d-flex align-items-center gap-2 border-top py-2">
+              <span class="main-purple-badge px-3 py-1 font-size-12 rounded-pill">العلامة الأولى</span>
+              <span class="main-green-badge px-3 py-1 font-size-12 rounded-pill">العلامة الثانية</span>
+            </div>
+            <div class="border-top pt-2">
+              <p class="dark-gray-color font-size-14">استعراض قرارات وتوجيهات الاجتماعات السابقة والقرارات التمريرية استعراض وتوجيهات التمريرية استعراض قرارات وتوجيهات الاجتماعات السابقة والقرارات التمريرية استعراض الاجتماعات السابقة والقرارات التمريرية استعراض قرارات الاجتماعات السابقة والقرارات التمريرية استعراض وتوجيهات الاجتماعات السابقة والقرارات التمريرية</p>
+            </div>
+            <div class="overlay gap-2 px-3 rounded-3">
+              <button class="btn green-bg text-white font-size-14 font-bold rounded-3 border-0 px-5" (click)="changeToGreen()">أخضر</button>
+              <button class="btn dark-btn main-shadow font-size-14 font-bold rounded-3 border-0 px-5">بدء البند التالي</button>
+              <button class="btn red-bg text-white font-size-14 font-bold rounded-3 border-0 px-5" (click)="changeToRed()">أحمر</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isHide" class="col-lg-3 order-lg-1 order-2">
+          <div class="">
+            <div class="accordion" id="accordionMetting">
+              <div *ngIf="isAttend" class="accordion-item border-0 rounded-3">
+                <h2 class="accordion-header d-flex justify-content-between align-items-center p-2">
+                  <button class="shadow-none bg-white light-heading-color font-bold rounded-3 p-0 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    حضور الإجتماع
+                  </button>
+                  <span class="medium-badge font-size-16 p-2 font-bold rounded-2">07</span>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionMeeting">
+                  <div class="accordion-body d-flex flex-column gap-3 p-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div [class]="isGreen? 'green-badge' : 'red-badge'" class="d-flex align-items-center py-1 px-2 rounded-3">
+                        <i class="bi bi-people ms-1"></i>
+                        <span class="font-size-12 font-bold">| 05</span>
+                      </div>
+                      <div class="d-flex align-items-center gray-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-x ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div class="d-flex align-items-center yellow-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-exclamation ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div>
+                        <button class="btn border-0 dark-blue-badge py-1 px-2 rounded-3"><i class="bi bi-person-plus"></i></button>
+                      </div>
+                    </div>
+                    <div class="people p-3 light-gray-bg rounded-3">
+                      <ul class="d-flex flex-column gap-4 p-0">
+                        <li class="d-flex align-items-center light-heading-color font-size-14">
+                          <i class="bi bi-mic ms-1"></i> محمد احمد مصطفى
+                        </li>
+                        <li [class]="isGreen? 'green-color' : 'red-color'" class="d-flex align-items-center font-size-14">
+                          <i class="bi bi-person-check ms-1"></i> الرئيس - سعد الغامدي
+                        </li>
+                        <li class="d-flex align-items-center light-gray-color font-size-14">
+                          <i class="bi bi-person-exclamation yellow-color ms-1"></i> ماهر المعيقلي
+                        </li>
+                        <li class="d-flex align-items-center dark-gray-color font-size-14">
+                          <i class="bi bi-person-x ms-1"></i> ناصر القطامي
+                        </li>
+                        <li [class]="isGreen? 'green-color' : 'red-color'" class="d-flex align-items-center font-size-14">
+                          <i class="bi bi-person-check ms-1"></i> محمد احمد مصطفى
+                        </li>
+                        <li class="d-flex align-items-center light-gray-color font-size-14">
+                          <i class="bi bi-person-exclamation yellow-color ms-1"></i> ماهر المعيقلي
+                        </li>
+                        <li class="d-flex align-items-center dark-gray-color font-size-14">
+                          <i class="bi bi-person-x ms-1"></i> ناصر القطامي
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="isTopic" class="accordion-item border-0 my-2 rounded-3">
+                <h2 class="accordion-header d-flex justify-content-between align-items-center p-2">
+                  <button class="shadow-none bg-white light-heading-color font-bold rounded-3 p-0 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    مواضيع الإجتماع
+                  </button>
+                  <span class="medium-badge font-size-16 p-2 font-bold rounded-2">06</span>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionMeeting">
+                  <div class="accordion-body d-flex flex-column gap-3 p-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div [class]="isGreen? 'green-badge' : 'red-badge'" class="d-flex align-items-center py-1 px-2 rounded-3">
+                        <i class="bi bi-people ms-1"></i>
+                        <span class="font-size-12 font-bold">| 05</span>
+                      </div>
+                      <div class="d-flex align-items-center gray-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-x ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div class="d-flex align-items-center yellow-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-exclamation ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div>
+                        <button class="btn border-0 dark-blue-badge py-1 px-2 rounded-3"><i class="bi bi-person-plus"></i></button>
+                      </div>
+                    </div>
+                    <div class="people p-3 light-gray-bg rounded-3">
+                      <ul class="d-flex flex-column gap-4 p-0">
+                        <li class="d-flex align-items-center light-heading-color font-size-14">
+                          <i class="bi bi-mic ms-1"></i> محمد احمد مصطفى
+                        </li>
+                        <li [class]="isGreen? 'green-color' : 'red-color'" class="d-flex align-items-center font-size-14">
+                          <i class="bi bi-person-check ms-1"></i> الرئيس - سعد الغامدي
+                        </li>
+                        <li class="d-flex align-items-center light-gray-color font-size-14">
+                          <i class="bi bi-person-exclamation yellow-color ms-1"></i> ماهر المعيقلي
+                        </li>
+                        <li class="d-flex align-items-center dark-gray-color font-size-14">
+                          <i class="bi bi-person-x ms-1"></i> ناصر القطامي
+                        </li>
+                        <li [class]="isGreen? 'green-color' : 'red-color'" class="d-flex align-items-center font-size-14">
+                          <i class="bi bi-person-check ms-1"></i> محمد احمد مصطفى
+                        </li>
+                        <li class="d-flex align-items-center light-gray-color font-size-14">
+                          <i class="bi bi-person-exclamation yellow-color ms-1"></i> ماهر المعيقلي
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="isAttachment" class="accordion-item border-0 my-2 rounded-3">
+                <h2 class="accordion-header d-flex justify-content-between align-items-center p-2">
+                  <button class="shadow-none bg-white light-heading-color font-bold rounded-3 p-0 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    مرفقات الإجتماع
+                  </button>
+                  <span class="medium-badge font-size-16 p-2 font-bold rounded-2">03</span>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionMeeting">
+                  <div class="accordion-body d-flex flex-column gap-3 p-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div [class]="isGreen? 'green-badge' : 'red-badge'" class="d-flex align-items-center py-1 px-2 rounded-3">
+                        <i class="bi bi-people ms-1"></i>
+                        <span class="font-size-12 font-bold">| 05</span>
+                      </div>
+                      <div class="d-flex align-items-center gray-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-x ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div class="d-flex align-items-center yellow-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-exclamation ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div>
+                        <button class="btn border-0 dark-blue-badge py-1 px-2 rounded-3"><i class="bi bi-person-plus"></i></button>
+                      </div>
+                    </div>
+                    <div class="people p-3 light-gray-bg rounded-3">
+                      <ul class="d-flex flex-column gap-4 p-0">
+                        <li class="d-flex align-items-center light-heading-color font-size-14">
+                          <i class="bi bi-mic ms-1"></i> محمد احمد مصطفى
+                        </li>
+                        <li [class]="isGreen? 'green-color' : 'red-color'" class="d-flex align-items-center font-size-14">
+                          <i class="bi bi-person-check ms-1"></i> الرئيس - سعد الغامدي
+                        </li>
+                        <li class="d-flex align-items-center light-gray-color font-size-14">
+                          <i class="bi bi-person-exclamation yellow-color ms-1"></i> ماهر المعيقلي
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="isRelated" class="accordion-item border-0 my-2 rounded-3">
+                <h2 class="accordion-header d-flex justify-content-between align-items-center p-2">
+                  <button class="shadow-none bg-white light-heading-color font-bold rounded-3 p-0 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    الإجتماعات المرتبطة
+                  </button>
+                  <span class="medium-badge font-size-16 p-2 font-bold rounded-2">00</span>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionMeeting">
+                  <div class="accordion-body d-flex flex-column gap-3 p-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div [class]="isGreen? 'green-badge' : 'red-badge'" class="d-flex align-items-center py-1 px-2 rounded-3">
+                        <i class="bi bi-people ms-1"></i>
+                        <span class="font-size-12 font-bold">| 05</span>
+                      </div>
+                      <div class="d-flex align-items-center gray-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-x ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div class="d-flex align-items-center yellow-badge py-1 px-2 rounded-3">
+                        <i class="bi bi-person-exclamation ms-1"></i>
+                        <span class="font-size-12 font-bold">| 01</span>
+                      </div>
+                      <div>
+                        <button class="btn border-0 dark-blue-badge py-1 px-2 rounded-3"><i class="bi bi-person-plus"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 order-lg-2 order-1">
+          <ul class="setting m-0 list-unstyled d-flex justify-content-between align-items-center gap-2 bg-white rounded-pill">
+            <li [class]="isRed ? 'red-badge': 'green-badge'" class=" font-size-20 circle"><a class=""><i class="bi bi-alarm"></i></a></li>
+            <li class="yellow-badge font-size-20 circle"><a class=""><i class="bi bi-skip-start"></i></a></li>
+            <li [class]="isRed ? 'red-badge': 'green-badge'" class="font-size-18 font-bold rounded-pill btn-shadow py-2 px-3">00:00</li>
+            <li class="medium-badge font-size-20 circle"><a class=""><i class="bi bi-file-earmark"></i></a></li>
+            <li class="light-blue-badge font-size-20 circle"><a class=""><i class="bi bi-unlock"></i></a></li>
+            <li class="light-blue-badge font-size-20 circle"><a class=""><i class="bi bi-lock"></i></a></li>
+            <li class="light-blue-badge font-size-20 circle"><a class=""><i class="bi bi-cast"></i></a></li>
+            <li class="light-blue-badge font-size-20 circle"><a class=""><i class="bi bi-clipboard2-check"></i></a></li>
+            <li class="light-blue-badge font-size-20 circle"><a class=""><i class="bi bi-file-earmark-text"></i></a></li>
+            <li class="light-blue-badge font-size-20 circle"><a class=""><i class="bi bi-chat-right-text"></i></a></li>
+            <li class="blue-gradient font-size-20 rounded-pill text-white d-flex align-items-center gap-2 px-2">
+              <a class=""><i class="bi bi-chevron-right"></i></a>
+              <a class="blue-heading-color bg-white circle btn-shadow"><i class="bi bi-plus"></i></a>
+              <a class=""><i class="bi bi-chevron-left"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 order-3">
+          <ul class="list-unstyled m-0 d-flex justify-content-between align-items-center dark-gradient py-2 px-3 rounded-pill mx-lg-3">
+            <li class="font-size-20"><button class="btn border-0 text-white" (click)="attendance()"><i class="bi bi-people"></i></button></li>
+            <li class="font-size-20"><button class="btn border-0 text-white" (click)="topics()"><i class="bi bi-card-text"></i></button></li>
+            <li class="font-size-20"><button class="btn border-0 text-white" (click)="attachments()"><i class="bi bi-folder-symlink"></i></button></li>
+            <li class="font-size-20"><button class="btn border-0 text-white" (click)="relatedMeetings()"><i class="bi bi-link-45deg"></i></button></li>
+          </ul>
+        </div>
+      </div>      
+    </div>
+  </div>
+</section>

@@ -1,0 +1,160 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F7FAFB;
+}
+p, h1, h2, h3, h4, h5, h6{
+  margin: 0px;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-nav{
+  background-color: #747C91;
+  color: #FFFFFF;
+}
+/* badges */
+.dark-badge{
+  background-color: #544F7F1A;
+  color: #2A235F;
+}
+.light-blue-badge{
+  background-color: #008CBF1A;
+  color: #008CBF;
+}
+.dark-blue-badge, .dark-blue-badge:hover{
+  background-color: #008CBF;
+  color: #FFFFFF;
+}
+.purple-badge{
+  background-color: #2A235F40;
+  color: #FFFFFF;
+}
+.medium-badge{
+  background-color: #2A235F1A;
+  color: #544F7F;
+}
+.main-purple-badge{
+  background-color: #8C25B733;
+  color: #7C23A2;
+}
+.main-green-badge{
+  background-color: #25B73D33;
+  color: #298839;
+}
+.green-badge{
+  background-color: #00CC871A;
+  color: #00CC87;
+}
+.gray-badge{
+  background-color: #747C911A;
+  color: #747C91;
+}
+.yellow-badge{
+  background-color: #FFC8711A;
+  color: #FFC871;
+}
+.red-badge{
+  background: linear-gradient(180deg, #C60A0A1A 0%, #C60A0A40 100%);
+  color: #C60A0A;
+}
+/* bg */
+.light-gray-bg{
+  background-color: #2A235F0D;
+}
+.green-bg, .green-bg:hover{
+  background-color: #00CC87;
+}
+.red-bg, .red-bg:hover{
+  background-color: #C60A0A;
+}
+/* colors */
+.light-gray-color{
+  color: #B9BDC8;
+}
+.dark-gray-color{
+  color: #747C91;
+}
+.green-color{
+  color: #00CC87;
+}
+.yellow-color{
+  color: #FFC871;
+}
+.red-color{
+  color: #C60A0A;
+}
+.dark-heading-color{
+  color: #2A235F;
+}
+.light-heading-color{
+  color: #544F7F;
+}
+.blue-heading-color{
+  color: #008CBF;
+}
+/* fonts */
+.font-size-20{
+  font-size: 20px;
+}
+.font-size-16{
+  font-size: 16px;
+}
+.font-size-18{
+  font-size: 18px;
+}
+.font-size-14{
+  font-size: 14px;
+}
+.font-size-12{
+  font-size: 12px;
+}
+.font-bold{
+  font-weight: bold;
+}
+.font-normal{
+  font-weight: normal;
+}
+/* buttons */
+.dark-btn, .dark-btn:hover{
+  background-color: #2A235F;
+  color: #FFFFFF;  
+}
+/* shadow */
+.main-shadow{
+  box-shadow: 0px 0px 24px #00000033;
+}
+.btn-shadow{
+  box-shadow: 0px 6px 12px #2A235F0D;
+}
+/* gradients */
+.blue-gradient{
+  background: linear-gradient(180deg, #008CBFB3 0%, #008CBF 100%);
+}
+.dark-gradient{
+  background: linear-gradient(180deg, #403A70 0%, #2A235F 100%);
+}
+.circle{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+/* media queries */
+@media screen and (max-width: 575px){
+  .font-size-20{
+    font-size: 16px;
+  }
+  .font-bold{
+    font-weight: 500;
+  }
+}
