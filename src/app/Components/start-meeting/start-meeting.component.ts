@@ -38,19 +38,15 @@ export class StartMeetingComponent implements DoCheck{
   }
 
   attendance(): void{
-    this.isAttend = !this.isAttend;
-    console.log(this.isAttend);
+    this.isAttend = !this.isAttend;    
   }
   topics(): void{
-    this.isTopic = !this.isTopic;
-    console.log(this.isTopic);    
+    this.isTopic = !this.isTopic;    
   }
   attachments(): void{
-    this.isAttachment = !this.isAttachment;
-    console.log(this.isAttachment);
+    this.isAttachment = !this.isAttachment;    
   }
   relatedMeetings(): void{
-    this.isRelated = !this.isRelated;
-    console.log(this.isRelated);
+    this.isRelated = !this.isRelated;    
   }
 }
